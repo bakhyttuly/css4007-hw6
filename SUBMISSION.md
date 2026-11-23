@@ -41,7 +41,23 @@ On the ice tile (2,3) the four actions give up -1.9, right -8.2, down -1.9, left
 
 ### Fixed policy, written before the experiments
 
-State the action for each nonterminal state and your reasoning.
+FrozenLake 4x4 states are numbered 0..15 by rows; holes are 5, 7, 11, 12 and the goal is 15. Actions: 0 = left, 1 = down, 2 = right, 3 = up.
+
+| State | Action |
+| --- | --- |
+| 0 | right (2) |
+| 1 | right (2) |
+| 2 | down (1) |
+| 3 | left (0) |
+| 4 | down (1) |
+| 6 | down (1) |
+| 8 | right (2) |
+| 9 | right (2) |
+| 10 | down (1) |
+| 13 | right (2) |
+| 14 | right (2) |
+
+Reasoning: I traced a safe path from the start to the goal on the non-slippery map: 0 -> 1 -> 2 -> 6 -> 10 -> 14 -> 15. For the other states I chose a move that goes back to this path or toward the goal and never goes directly into a hole (for example, state 3 goes left because down would be hole 7, and state 8 goes right because down would be hole 12). The policy is fixed and does not change between experiments. With slipping it should fail more often, because some tiles (like 10) have a hole next to them.
 
 ### Results
 
