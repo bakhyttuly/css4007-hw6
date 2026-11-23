@@ -6,7 +6,7 @@ I used Claude (an AI assistant) to explain the value iteration method and the Pa
 
 ## Setup and reproduction
 
-Versions: Python 3.10.12, gymnasium 1.4.0, numpy 2.2.6 (full list in `requirements.txt`, also saved in `outputs/versions.txt`).
+Versions used (my Windows machine): Python 3.12.2, gymnasium 1.4.0, numpy 2.5.5 (full list in `requirements.txt`, also saved in `outputs/versions.txt`). The same code also gave identical results with Python 3.10.12 and numpy 2.2.6, so the results do not depend on these versions.
 
 Install and run Part B (from the repository folder):
 
