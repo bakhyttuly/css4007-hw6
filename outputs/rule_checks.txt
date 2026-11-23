@@ -1,0 +1,28 @@
+=== Rule checks (Part C) ===
+PASS  Wall: (2,1) moving right into wall (2,2) stays on (2,1), reward -1 (floor)   [[(1.0, (2, 1), -1)]]
+PASS  Wall: (1,2) mud moving down into wall (2,2) stays on (1,2), reward -3 (mud)   [[(1.0, (1, 2), -3)]]
+PASS  Boundary: (1,1) moving up leaves the map -> stays, reward -1   [[(1.0, (1, 1), -1)]]
+PASS  Boundary: (3,1) moving left leaves the map -> stays, reward -1   [[(1.0, (3, 1), -1)]]
+PASS  Boundary on extended map: (3,4) water moving down stays, reward -5 (water, tile where the move ends)   [[(1.0, (3, 4), -5)]]
+PASS  Ice (2,3), action up: probabilities sum to 1   [sum = 1.0]
+PASS  Ice (2,3), action right: probabilities sum to 1   [sum = 1.0]
+PASS  Ice (2,3), action down: probabilities sum to 1   [sum = 1.0]
+PASS  Ice (2,3), action left: probabilities sum to 1   [sum = 1.0]
+PASS  Ice (2,3) up: 0.8 -> (1,3), slip left hits wall -> stays on ice (0.1), slip right -> hole (0.1)   [[(0.8, (1, 3), -1), (0.1, (2, 3), -1), (0.1, (2, 4), -10)]]
+PASS  Ice (2,3) left: 0.8 into wall -> stays on ice, slips up -> (1,3) and down -> (3,3), 0.1 each   [[(0.8, (2, 3), -1), (0.1, (1, 3), -1), (0.1, (3, 3), -1)]]
+PASS  Ice (2,3) right: 0.8 -> hole (-10), slips up -> (1,3) and down -> (3,3), 0.1 each   [[(0.8, (2, 4), -10), (0.1, (1, 3), -1), (0.1, (3, 3), -1)]]
+PASS  Slipping depends on the tile you leave: non-ice tiles are deterministic (all tiles but (2,3) have one outcome)
+PASS  Mud: entering (1,2) gives -3   [[(1.0, (1, 2), -3)]]
+PASS  Sand: entering (3,2) gives -2 (extended map)   [[(1.0, (3, 2), -2)]]
+PASS  Water: entering (3,4) gives -5 (extended map)   [[(1.0, (3, 4), -5)]]
+PASS  Goal: entering G gives +10   [[(1.0, (1, 4), 10)]]
+PASS  Sand and water moves are deterministic (one outcome with probability 1)
+PASS  Original floor rewards: floor -1, start -1, ice -1, mud -3, hole -10
+PASS  Terminal (paper map): no transitions out of G or H
+PASS  Terminal (paper map): value of G and H stays 0 in every round
+PASS  Terminal (paper map): in 50 simulated episodes no move or reward happens after G/H (episode ends on first terminal state, rewards = one per move)   [episodes with moves after terminal: 0, return mismatches: 0]
+PASS  Terminal (extended map): no transitions out of G or H
+PASS  Terminal (extended map): value of G and H stays 0 in every round
+PASS  Terminal (extended map): in 50 simulated episodes no move or reward happens after G/H (episode ends on first terminal state, rewards = one per move)   [episodes with moves after terminal: 0, return mismatches: 0]
+
+25 of 25 checks passed.
