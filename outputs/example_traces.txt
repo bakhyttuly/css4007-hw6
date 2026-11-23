@@ -1,0 +1,6 @@
+Successful trace (fixed_slippery=True, batch seed 11, episode seed 11000, outcome goal, 11 steps):
+0 -right-> 0 -right-> 4 -down-> 4 -down-> 4 -down-> 8 -right-> 9 -right-> 13 -right-> 9 -right-> 13 -right-> 14 -right-> 15
+
+Failed trace (fixed_slippery=True, batch seed 11, episode seed 11001, outcome hole, 3 steps):
+0 -right-> 1 -right-> 1 -right-> 5
+
